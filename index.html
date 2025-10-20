@@ -1,490 +1,229 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Nefrología Moderna y Avanzada — Dr. Jose Manuel Rojas Durand</title>
-  <meta name="description" content="Consultorio de Nefrología — Dr. Jose Manuel Rojas Durand. Atención en diálisis, trasplante renal, hipertensión y manejo integral renal. Agende su cita." />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nefrología Moderna y Avanzada</title>
   <style>
-    /* -------------------------
-       Reset & base
-       ------------------------- */
-    :root{
-      --bg:#f6f8fb;
-      --card:#ffffff;
-      --primary:#0f5b86;        /* azul principal */
-      --primary-2:#176b9a;      /* azul secundario */
-      --muted:#6b7280;
-      --accent:#0ea5a0;
-      --radius:14px;
-      --maxw:1100px;
-      --glass: rgba(255,255,255,0.7);
-    }
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0;
-      font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-      background: linear-gradient(180deg, #eef6fb 0%, #f8fbfd 100%);
-      color:#0f1724;
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-      line-height:1.45;
-    }
-    a { color:var(--primary); text-decoration:none; }
-    main{padding:2rem}
-    .container{max-width:var(--maxw); margin:0 auto; padding:0 1rem;}
-
-    /* -------------------------
-       Header
-       ------------------------- */
-    header{
-      position:sticky; top:0; z-index:40;
-      backdrop-filter: blur(6px);
-      background: linear-gradient(180deg, rgba(255,255,255,0.6), rgba(255,255,255,0.4));
-      border-bottom: 1px solid rgba(15,88,134,0.06);
-    }
-    .nav{
-      display:flex; align-items:center; justify-content:space-between;
-      gap:1rem; padding:0.75rem 1rem;
-      max-width:var(--maxw); margin:0 auto;
-    }
-    .brand{display:flex; gap:0.8rem; align-items:center;}
-    .logo {
-      width:48px; height:48px; border-radius:10px;
-      display:grid; place-items:center;
-      background: linear-gradient(135deg, rgba(15,91,134,0.15), rgba(15,91,134,0.05));
-      box-shadow: 0 4px 12px rgba(12,37,68,0.06);
-    }
-    .brand h1{font-size:1rem; margin:0; color:var(--primary)}
-    nav a{margin-left:1rem; color:var(--primary-2); font-weight:600}
-    .cta { display:inline-flex; gap:0.6rem; align-items:center;
-      background:var(--primary); color:white; padding:0.6rem 0.9rem; border-radius:10px; font-weight:600; box-shadow: 0 6px 18px rgba(15,88,134,0.12);
-    }
-    .cta.small { padding:0.45rem 0.7rem; font-size:0.9rem }
-
-    /* -------------------------
-       Hero
-       ------------------------- */
-    .hero{
-      margin-top:1.2rem;
-      background: linear-gradient(180deg, rgba(15,91,134,0.06), rgba(7,20,40,0.02));
-      padding:2.2rem;
-      border-radius:18px;
-      display:grid;
-      grid-template-columns: 1fr 380px;
-      gap:1.6rem;
-      align-items:center;
-      box-shadow: 0 8px 30px rgba(8,20,34,0.04);
-    }
-    .hero-left h2{font-size:2rem; margin:0 0 0.6rem; color:#062433}
-    .hero-left p{margin:0 0 1.3rem; color:var(--muted)}
-    .actions{display:flex; gap:0.8rem; align-items:center}
-    .btn {
-      background: linear-gradient(90deg,var(--primary),var(--primary-2));
-      color:white; padding:0.75rem 1.1rem; border-radius:12px; border:0; cursor:pointer; font-weight:700;
-      box-shadow: 0 10px 24px rgba(7,24,44,0.08);
-    }
-    .btn.ghost{
-      background:transparent; color:var(--primary); border:2px solid rgba(15,91,134,0.09);
-      font-weight:600;
-    }
-    .hero-right{
-      background: linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,0.85));
-      padding:1rem; border-radius:12px; box-shadow: 0 8px 18px rgba(12,37,68,0.04);
-    }
-    .card-quick{display:flex; gap:0.8rem; align-items:center}
-    .doctor {
-      width:72px; height:72px; border-radius:12px; display:grid; place-items:center;
-      background: linear-gradient(135deg, rgba(14,165,160,0.12), rgba(15,91,134,0.05));
-      font-weight:700; color:var(--primary);
-    }
-    .small-meta{font-size:0.95rem; color:var(--muted)}
-
-    /* -------------------------
-       Sections cards
-       ------------------------- */
-    section .card{
-      background:var(--card);
-      padding:1.4rem;
-      border-radius:12px;
-      box-shadow: 0 6px 16px rgba(9,30,52,0.04);
-      margin-bottom:1.4rem;
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background-color: #f5f5f5;
+      color: #333;
+      scroll-behavior: smooth;
     }
 
-    /* Services grid */
-    .grid-3{display:grid; grid-template-columns:repeat(3,1fr); gap:1rem}
-    .service-icon{
-      width:62px; height:62px; border-radius:12px; display:grid; place-items:center;
-      background: linear-gradient(135deg, rgba(15,91,134,0.08), rgba(14,165,160,0.06));
-      font-weight:700; color:var(--primary);
-      margin-right:0.9rem;
-      flex-shrink:0;
+    header {
+      background-color: #0a2a43;
+      color: white;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
-    .service-row{display:flex; gap:0.6rem; align-items:flex-start}
+    header h1 {
+      margin: 0;
+      font-size: 1.3rem;
+    }
+    nav a {
+      color: white;
+      margin-left: 1rem;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover { text-decoration: underline; }
 
-    /* Testimonials */
-    .test-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:1rem}
-    .quote { font-style:italic; color:var(--muted); margin-bottom:0.6rem;}
-    .author{font-weight:700; color:#0f1724}
+    /* Hero */
+    .hero {
+      background: linear-gradient(135deg, #0a2a43, #1e3a5f);
+      color: white;
+      text-align: center;
+      padding: 5rem 2rem;
+    }
+    .hero h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+    }
+    .btn-primary {
+      background-color: #1e90ff;
+      padding: 0.8rem 1.5rem;
+      border: none;
+      border-radius: 6px;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .btn-primary:hover {
+      background-color: #187bcd;
+    }
 
-    /* Contact form */
-    form{display:grid; gap:0.8rem}
-    label{font-size:0.9rem; color:var(--muted)}
-    input, textarea, select{
-      width:100%; padding:0.8rem; border-radius:10px; border:1px solid rgba(8,20,34,0.06);
-      background:transparent; font-size:0.98rem;
+    /* Sections */
+    section {
+      padding: 4rem 2rem;
+      max-width: 1100px;
+      margin: auto;
     }
-    textarea{min-height:120px; resize:vertical}
-    .row{display:flex; gap:0.8rem}
-    .row > *{flex:1}
+    .card {
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      margin-bottom: 2rem;
+    }
 
-    /* Footer */
-    footer{
-      margin-top:1.6rem; padding:1.6rem 0; color:var(--muted);
-      border-top:1px solid rgba(15,88,134,0.04);
-      background:transparent;
+    /* Services */
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
     }
-    .socials{display:flex; gap:0.6rem; align-items:center}
+    .service-box {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    .service-box h3 {
+      margin-top: 0.5rem;
+    }
 
-    /* Responsive */
-    @media (max-width:1000px){
-      .hero{grid-template-columns:1fr; padding:1.2rem}
-      .grid-3{grid-template-columns:repeat(2,1fr)}
-      .test-grid{grid-template-columns:repeat(2,1fr)}
+    /* Testimonios */
+    .testimonial {
+      font-style: italic;
+      margin-bottom: 1.5rem;
+      background: white;
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
-    @media (max-width:620px){
-      nav a{display:none}
-      .grid-3, .test-grid{grid-template-columns:1fr}
-      .nav{padding:0.6rem 0.8rem}
-      .hero-left h2{font-size:1.5rem}
+
+    /* Contacto */
+    .contact-form input, .contact-form textarea {
+      width: 100%;
+      padding: 0.8rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
     }
-    /* small helpers */
-    .muted{color:var(--muted)}
-    .pill{display:inline-block; padding:0.25rem 0.6rem; border-radius:999px; background:rgba(14,165,160,0.08); color:var(--accent); font-weight:700; font-size:0.85rem}
+    .contact-form button {
+      background-color: #1e90ff;
+      border: none;
+      padding: 0.8rem 1.5rem;
+      color: white;
+      font-weight: bold;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .contact-form button:hover {
+      background-color: #187bcd;
+    }
+
+    footer {
+      background-color: #0a2a43;
+      color: white;
+      text-align: center;
+      padding: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        text-align: center;
+      }
+      nav a {
+        margin: 0.5rem;
+      }
+    }
   </style>
 </head>
 <body>
+
+  <!-- Header -->
   <header>
-    <div class="nav container">
-      <div class="brand">
-        <div class="logo" aria-hidden="true">
-          <!-- Simple kidney-ish SVG for logo -->
-          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <path d="M6 12c0-3.5 2.5-6 6-6s6 2.5 6 6c0 2.5-2 4.5-6 6-4-1.5-6-3.5-6-6z" stroke="#0f5b86" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" fill="rgba(15,91,134,0.06)"/>
-            <path d="M13 8l4 4" stroke="#0ea5a0" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </div>
-        <div>
-          <h1>Nefrología Moderna y Avanzada</h1>
-          <div class="small-meta">Dr. Jose Manuel Rojas Durand — Médico Nefrólogo</div>
-        </div>
-      </div>
-
-      <div style="display:flex; gap:0.6rem; align-items:center">
-        <nav aria-label="Menú principal">
-          <a href="#inicio">Inicio</a>
-          <a href="#sobre">Sobre</a>
-          <a href="#servicios">Servicios</a>
-          <a href="#testimonios">Testimonios</a>
-          <a href="#contacto">Contacto</a>
-        </nav>
-
-        <a class="cta small" href="#contacto" title="Agendar cita">Agendar cita</a>
-      </div>
-    </div>
+    <h1>Nefrología Moderna y Avanzada</h1>
+    <nav>
+      <a href="#inicio">Inicio</a>
+      <a href="#sobre">Sobre mí</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#testimonios">Testimonios</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
   </header>
 
-  <main class="container">
-    <!-- HERO -->
-    <section class="hero" id="inicio" aria-label="Presentación">
-      <div class="hero-left">
-        <div class="pill">Atención presencial y teleconsulta</div>
-        <h2>Especialistas en salud renal — cuidado integral y personalizado</h2>
-        <p>Tratamientos en diálisis, manejo de enfermedad renal crónica, seguimiento post-trasplante y control de hipertensión. Atención con evidencia, empatía y tecnología.</p>
-        <div class="actions">
-          <button class="btn" onclick="openWhatsApp()">Agendar por WhatsApp</button>
-          <a class="btn ghost" href="#contacto">Contacto / Ubicación</a>
-        </div>
-        <p style="margin-top:0.8rem" class="muted">Dr. Jose Manuel Rojas Durand — CMP 92446 · RNE 52520</p>
+  <!-- Hero -->
+  <section class="hero" id="inicio">
+    <h2>Bienvenidos a Nefrología Moderna y Avanzada</h2>
+    <p>Atención especializada en salud renal con tecnología actual y trato humano.</p>
+    <a href="https://wa.me/51999999999" class="btn-primary" target="_blank">Agendar cita por WhatsApp</a>
+  </section>
+
+  <!-- Sobre mí -->
+  <section id="sobre">
+    <div class="card">
+      <h2>Sobre el Médico</h2>
+      <p><strong>Dr. Jose Manuel Rojas Durand</strong><br>
+      Médico Nefrólogo – CMP 92446 | RNE 52520</p>
+      <p>Especialista en el diagnóstico y tratamiento de enfermedades renales, hipertensión arterial, diálisis y trasplante renal. Comprometido con la salud del paciente desde una perspectiva moderna, científica y humana.</p>
+    </div>
+  </section>
+
+  <!-- Servicios -->
+  <section id="servicios">
+    <h2 style="text-align:center;">Servicios</h2>
+    <div class="services">
+      <div class="service-box">
+        <h3>Consulta Nefrológica</h3>
+        <p>Evaluación completa de función renal, diagnóstico y tratamiento personalizado.</p>
       </div>
-
-      <aside class="hero-right" aria-hidden="false">
-        <div style="display:flex; gap:0.9rem; align-items:center">
-          <div class="doctor">JM</div>
-          <div>
-            <div style="font-weight:800; color:#062433">Dr. Jose Manuel R. Durand</div>
-            <div class="small-meta">Médico Nefrólogo · Atención especializada</div>
-          </div>
-        </div>
-
-        <div style="margin-top:1rem">
-          <div class="card-quick" style="justify-content:space-between">
-            <div>
-              <div class="small-meta">Consultas</div>
-              <div style="font-weight:800">Presencial y virtual</div>
-            </div>
-            <div style="text-align:right">
-              <div class="small-meta">Horario</div>
-              <div style="font-weight:800">Lun-Vie · 09:00 - 17:00</div>
-            </div>
-          </div>
-
-          <div style="margin-top:0.9rem;">
-            <div class="small-meta">Ubicación</div>
-            <div style="font-weight:700">Lima, Perú</div>
-            <div style="margin-top:0.6rem">
-              <a href="#contacto" class="cta small">Ver detalles</a>
-            </div>
-          </div>
-        </div>
-      </aside>
-    </section>
-
-    <!-- SOBRE -->
-    <section id="sobre" class="card" aria-labelledby="sobre-tit">
-      <h2 id="sobre-tit">Sobre el consultorio</h2>
-      <p class="muted">Nefrología Moderna y Avanzada ofrece atención médica integral del riñón con enfoque en evidencias y trato humano. Nuestro objetivo es preservar la función renal, reducir complicaciones y mejorar la calidad de vida de cada paciente.</p>
-      <div style="display:flex; gap:1rem; margin-top:1rem; align-items:flex-start; flex-wrap:wrap">
-        <div style="flex:1; min-width:250px;">
-          <h3>Dr. Jose Manuel Rojas Durand</h3>
-          <p class="muted">Médico Nefrólogo con experiencia en manejo de ERC, diálisis y trasplante renal. CMP 92446 · RNE 52520.</p>
-        </div>
-        <div style="flex:1; min-width:250px;">
-          <h3>Nuestra filosofía</h3>
-          <p class="muted">Cuidado centrado en el paciente, decisiones compartidas, actualización continua y uso de tecnologías diagnósticas contemporáneas.</p>
-        </div>
+      <div class="service-box">
+        <h3>Diálisis (Hemodiálisis y Diálisis Peritoneal)</h3>
+        <p>Supervisión médica en terapias de reemplazo renal.</p>
       </div>
-    </section>
-
-    <!-- SERVICIOS -->
-    <section id="servicios" class="card" aria-labelledby="serv-tit">
-      <h2 id="serv-tit">Servicios principales</h2>
-      <div class="grid-3" style="margin-top:1rem">
-        <div class="service">
-          <div class="service-row">
-            <div class="service-icon" aria-hidden="true">
-              <!-- icon -->
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M5 12h14" stroke="#0f5b86" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M12 5v14" stroke="#0ea5a0" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </div>
-            <div>
-              <h4 style="margin:0 0 0.3rem">Consulta nefrológica</h4>
-              <div class="muted">Evaluación integral: pruebas, interpretación y plan terapéutico personalizado.</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="service">
-          <div class="service-row">
-            <div class="service-icon" aria-hidden="true">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
-                <path d="M3 7h18" stroke="#0f5b86" stroke-width="1.4" stroke-linecap="round" />
-                <path d="M3 12h18" stroke="#0ea5a0" stroke-width="1.4" stroke-linecap="round" />
-                <path d="M3 17h18" stroke="#176b9a" stroke-width="1.4" stroke-linecap="round" />
-              </svg>
-            </div>
-            <div>
-              <h4 style="margin:0 0 0.3rem">Manejo de ERC</h4>
-              <div class="muted">Seguimiento de estadios de ERC, ajuste de fármacos y prevención de progresión.</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="service">
-          <div class="service-row">
-            <div class="service-icon" aria-hidden="true">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
-                <path d="M12 2v20" stroke="#0f5b86" stroke-width="1.4" stroke-linecap="round"/>
-                <path d="M2 12h20" stroke="#0ea5a0" stroke-width="1.4" stroke-linecap="round"/>
-              </svg>
-            </div>
-            <div>
-              <h4 style="margin:0 0 0.3rem">Diálisis y preparación</h4>
-              <div class="muted">Asesoría para opciones de diálisis, acceso vascular y seguimiento multidisciplinario.</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="service">
-          <div class="service-row">
-            <div class="service-icon" aria-hidden="true">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
-                <circle cx="12" cy="8" r="3" stroke="#0f5b86" stroke-width="1.3"/>
-                <path d="M5 20c2-3 7-4 7-4s5 1 7 4" stroke="#0ea5a0" stroke-width="1.3" stroke-linecap="round"/>
-              </svg>
-            </div>
-            <div>
-              <h4 style="margin:0 0 0.3rem">Trasplante renal</h4>
-              <div class="muted">Seguimiento pre y post trasplante, ajuste de inmunosupresión y manejo de complicaciones.</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="service">
-          <div class="service-row">
-            <div class="service-icon" aria-hidden="true">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
-                <path d="M4 4l16 16" stroke="#0f5b86" stroke-width="1.4" />
-                <path d="M20 4L4 20" stroke="#0ea5a0" stroke-width="1.1" />
-              </svg>
-            </div>
-            <div>
-              <h4 style="margin:0 0 0.3rem">Hipertensión resistente</h4>
-              <div class="muted">Diagnóstico y tratamiento de hipertensión en el contexto renal.</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="service">
-          <div class="service-row">
-            <div class="service-icon" aria-hidden="true">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
-                <rect x="3" y="4" width="18" height="14" rx="2" stroke="#0f5b86" stroke-width="1.3"/>
-                <path d="M8 10h8" stroke="#0ea5a0" stroke-width="1.3"/>
-              </svg>
-            </div>
-            <div>
-              <h4 style="margin:0 0 0.3rem">Educación y prevención</h4>
-              <div class="muted">Asesoría en nutrición renal y estilos de vida para preservar la función renal.</div>
-            </div>
-          </div>
-        </div>
-
+      <div class="service-box">
+        <h3>Trasplante Renal</h3>
+        <p>Seguimiento post-trasplante, ajustes de inmunosupresión y prevención de rechazo.</p>
       </div>
-    </section>
-
-    <!-- TESTIMONIOS -->
-    <section id="testimonios" class="card" aria-labelledby="test-tit">
-      <h2 id="test-tit">Testimonios</h2>
-      <div class="test-grid" style="margin-top:1rem">
-        <div>
-          <div class="quote">"El Dr. Rojas nos brindó confianza y explicó todo con claridad. El seguimiento es excelente."</div>
-          <div class="author">— María G.</div>
-        </div>
-        <div>
-          <div class="quote">"Atención profesional, me ayudaron a decidir por la mejor alternativa de tratamiento."</div>
-          <div class="author">— Carlos R.</div>
-        </div>
-        <div>
-          <div class="quote">"Equipo humano y eficiente. El control de mi hipertensión mejoró notablemente."</div>
-          <div class="author">— Ana P.</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTACTO -->
-    <section id="contacto" class="card" aria-labelledby="cont-tit">
-      <h2 id="cont-tit">Contacto & Agendar cita</h2>
-      <div style="display:grid; grid-template-columns:1fr 360px; gap:1rem; margin-top:1rem">
-        <div>
-          <!-- Formulario (estático: envía por email usando mailto; también puedes activar backend posteriormente) -->
-          <form onsubmit="handleForm(event)">
-            <label for="nombre">Nombre</label>
-            <input id="nombre" name="nombre" required placeholder="Tu nombre">
-
-            <label for="email">Email</label>
-            <input id="email" name="email" type="email" required placeholder="ejemplo@correo.com">
-
-            <label for="telefono">Teléfono / WhatsApp</label>
-            <input id="telefono" name="telefono" placeholder="+51 9xx xxx xxx">
-
-            <label for="mensaje">Motivo de la consulta</label>
-            <textarea id="mensaje" name="mensaje" placeholder="Breve descripción"></textarea>
-
-            <div style="display:flex; gap:0.8rem; margin-top:0.6rem">
-              <button type="submit" class="btn" style="flex:1">Enviar solicitud</button>
-              <button type="button" class="btn ghost" onclick="openWhatsApp()" style="flex:0.8">Agendar por WhatsApp</button>
-            </div>
-            <div id="form-msg" style="margin-top:0.6rem; color:var(--muted); font-size:0.95rem"></div>
-          </form>
-        </div>
-
-        <aside style="background:linear-gradient(180deg, rgba(255,255,255,0.95), rgba(255,255,255,0.9)); padding:1rem; border-radius:10px;">
-          <h4 style="margin-top:0">Datos</h4>
-          <p class="muted" style="margin:0.1rem 0"><strong>Email:</strong> <a href="mailto:ejemplo@gmail.com">ejemplo@gmail.com</a></p>
-          <p class="muted" style="margin:0.1rem 0"><strong>WhatsApp:</strong> <a href="tel:+51999999999">+51 999 999 999</a></p>
-          <p class="muted" style="margin:0.1rem 0"><strong>Dirección:</strong> Consultorio, Lima, Perú</p>
-          <div style="margin-top:0.8rem">
-            <a class="btn" href="#servicios">Ver servicios</a>
-          </div>
-        </aside>
-      </div>
-    </section>
-
-    <!-- MAPA simple (opcional) -->
-    <section class="card" aria-label="Ubicación">
-      <h3>Ubicación</h3>
-      <p class="muted" style="margin-top:0.4rem">Si quieres, reemplaza este mapa por un iframe de Google Maps con la ubicación exacta del consultorio.</p>
-      <div style="height:220px; background:linear-gradient(180deg,#e9f3f9,#f6fbff); border-radius:10px; display:grid; place-items:center; color:var(--muted);">
-        Mapa / Iframe de Google Maps (pegue aquí el iframe si desea)
-      </div>
-    </section>
-
-  </main>
-
-  <footer>
-    <div class="container" style="display:flex; justify-content:space-between; align-items:center; gap:1rem; flex-wrap:wrap">
-      <div>
-        <strong>Nefrología Moderna y Avanzada</strong><br>
-        <span class="muted">Dr. Jose Manuel Rojas Durand — CMP 92446 · RNE 52520</span>
-      </div>
-
-      <div style="display:flex; gap:1rem; align-items:center; flex-wrap:wrap">
-        <div class="socials">
-          <!-- redes (edítalas según sus URLs) -->
-          <a href="#" aria-label="Instagram">IG</a>
-          <a href="#" aria-label="Facebook">FB</a>
-          <a href="#" aria-label="LinkedIn">LI</a>
-        </div>
-        <div class="muted">© <span id="year"></span> Todos los derechos reservados</div>
+      <div class="service-box">
+        <h3>Hipertensión y Enfermedad Renal Crónica</h3>
+        <p>Control integral de comorbilidades y protección de la función renal.</p>
       </div>
     </div>
+  </section>
+
+  <!-- Testimonios -->
+  <section id="testimonios">
+    <h2 style="text-align:center;">Testimonios de Pacientes</h2>
+    <div class="testimonial">“Excelente atención, explica todo con claridad y paciencia.”</div>
+    <div class="testimonial">“Gracias al tratamiento he mejorado mi calidad de vida enormemente.”</div>
+  </section>
+
+  <!-- Contacto -->
+  <section id="contacto">
+    <div class="card">
+      <h2>Contacto</h2>
+      <form class="contact-form">
+        <input type="text" placeholder="Nombre completo" required>
+        <input type="email" placeholder="Correo electrónico" required>
+        <textarea rows="4" placeholder="Mensaje o consulta" required></textarea>
+        <button type="submit">Enviar mensaje</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Nefrología Moderna y Avanzada | Dr. Jose Manuel Rojas Durand</p>
+    <p>CMP 92446 | RNE 52520</p>
   </footer>
 
-  <script>
-    /* ============================
-       CONFIGURACIÓN (edita aquí)
-       ============================ */
-    const WHATSAPP_NUMBER = "+51999999999"; // <- reemplaza con tu número (formato internacional, ejemplo +51999999999)
-    const WHATSAPP_MESSAGE = encodeURIComponent("Hola Dr. Jose Manuel, quiero agendar una cita. Gracias.");
-
-    // Mostrar año dinámico
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Abre WhatsApp Web / App
-    function openWhatsApp(){
-      const url = `https://wa.me/${WHATSAPP_NUMBER.replace(/\D/g,'')}?text=${WHATSAPP_MESSAGE}`;
-      window.open(url, '_blank');
-    }
-
-    // Formulario: construir mailto con los campos y abrir cliente de correo
-    function handleForm(e){
-      e.preventDefault();
-      const nombre = document.getElementById('nombre').value.trim();
-      const email = document.getElementById('email').value.trim();
-      const telefono = document.getElementById('telefono').value.trim();
-      const mensaje = document.getElementById('mensaje').value.trim();
-
-      // Si prefieres enviar a un email específico, cámbialo aquí:
-      const targetEmail = 'ejemplo@gmail.com'; // <- reemplazar por email real
-
-      const subject = encodeURIComponent(`Solicitud de cita: ${nombre}`);
-      const body = encodeURIComponent(
-        `Nombre: ${nombre}\nEmail: ${email}\nTeléfono: ${telefono}\n\nMotivo:\n${mensaje}`
-      );
-
-      // Intenta abrir cliente de correo:
-      const mailto = `mailto:${targetEmail}?subject=${subject}&body=${body}`;
-      window.location.href = mailto;
-
-      // Mensaje de confirmación (se mostrará solo si el mailto no redirige)
-      const info = document.getElementById('form-msg');
-      info.textContent = "Se ha abierto su cliente de correo. Si no sucede nada, por favor contacte por WhatsApp.";
-      setTimeout(()=> info.textContent = "", 6000);
-    }
-  </script>
 </body>
 </html>
